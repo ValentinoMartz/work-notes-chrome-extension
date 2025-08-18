@@ -1,0 +1,70 @@
+:root {
+    --background-color: #0C141F;
+    --text-color: #EAEAEA;
+    --primary-color: #F58426;
+    --secondary-accent: #0093fcff;
+    --border-color: #2C3E50;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+}
+
+h3 {
+    margin-top: 0;
+    color: var(--secondary-accent);
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover {
+    filter: brightness(120%);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 0;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+.lang-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.lang-selector button {
+    width: 50px;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+/* --- ESTILO PARA EL BOTÓN ACTIVO --- */
+.lang-selector button.active {
+    background-color: var(--primary-color);
+    color: #0C141F;
+    font-weight: bold;
+    border-color: var(--primary-color);
+}

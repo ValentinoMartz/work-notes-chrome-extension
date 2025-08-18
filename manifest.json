@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Asistente Pelusa",
+  "version": "0.3",
+  "description": "Un asistente táctico para la postulación de empleos.",
+  "permissions": [
+    "storage",
+    "activeTab", 
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
