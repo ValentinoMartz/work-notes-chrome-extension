@@ -2,86 +2,103 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pelu Assistant - Settings</title>
+    <title>Pelufiller - Opciones</title>
     <link rel="stylesheet" href="options.css">
 </head>
 <body>
     <div class="container">
-        <h2>Pelu Assistant</h2>
+        <h2>Pelufiller</h2>
+        <p class="subtitle">Perfiles por empresa y puesto para rellenar formularios de postulación.</p>
 
-        <h3>Basic Info</h3>
-        <div class="form-grid">
-            <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName">
+        <section>
+            <h3>Datos base</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="base_firstName">Nombre</label>
+                    <input type="text" id="base_firstName">
+                </div>
+                <div class="form-group">
+                    <label for="base_lastName">Apellido</label>
+                    <input type="text" id="base_lastName">
+                </div>
+                <div class="form-group">
+                    <label for="base_email">Email</label>
+                    <input type="email" id="base_email">
+                </div>
+                <div class="form-group">
+                    <label for="base_phone">Teléfono</label>
+                    <input type="text" id="base_phone">
+                </div>
+                <div class="form-group">
+                    <label for="base_country">País</label>
+                    <input type="text" id="base_country">
+                </div>
+                <div class="form-group">
+                    <label for="base_linkedin">LinkedIn</label>
+                    <input type="text" id="base_linkedin">
+                </div>
+                <div class="form-group">
+                    <label for="base_github">GitHub</label>
+                    <input type="text" id="base_github">
+                </div>
+                <div class="form-group">
+                    <label for="base_portfolio">Portfolio / Web</label>
+                    <input type="text" id="base_portfolio">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName">
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone">
-            </div>
-        </div>
+            <button id="saveBaseButton">Guardar datos base</button>
+            <p id="baseStatus" class="status"></p>
+        </section>
 
-        <h3>Text Arsenal</h3>
-        <div class="text-block">
-            <label>Professional Summary</label>
-            <div class="language-columns">
-                <div class="column">
-                    <h4>Spanish</h4>
-                    <textarea id="summary_es" rows="6"></textarea>
-                </div>
-                <div class="column">
-                    <h4>English</h4>
-                    <textarea id="summary_en" rows="6"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="text-block">
-            <label>Experience (Accenture)</label>
-            <div class="language-columns">
-                <div class="column">
-                    <h4>Spanish</h4>
-                    <textarea id="experience_es" rows="8"></textarea>
-                </div>
-                <div class="column">
-                    <h4>English</h4>
-                    <textarea id="experience_en" rows="8"></textarea>
-                </div>
-            </div>
-        </div>
-        
-        <h3>Key Dates (Visual Reference Only)</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Experience / Study</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Accenture</td>
-                    <td>01/03/2023</td>
-                    <td>16/08/2025</td>
-                </tr>
-                <tr>
-                    <td>Henry (Group Project)</td>
-                    <td>01/05/2022</td>
-                    <td>01/08/2022</td>
-                </tr>
-            </tbody>
-        </table>
+        <section>
+            <h3>Variantes por empresa / puesto</h3>
+            <div id="variantList" class="variant-list"></div>
+            <button id="newVariantButton" class="btn-secondary">Nueva variante</button>
 
-        <button id="saveButton">Save Configuration</button>
-        <p id="status"></p>
+            <div id="variantForm" class="variant-form hidden">
+                <h4 id="variantFormTitle">Nueva variante</h4>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="v_label">Etiqueta</label>
+                        <input type="text" id="v_label" placeholder="Empresa — Puesto">
+                    </div>
+                    <div class="form-group">
+                        <label for="v_company">Empresa</label>
+                        <input type="text" id="v_company">
+                    </div>
+                    <div class="form-group">
+                        <label for="v_position">Puesto</label>
+                        <input type="text" id="v_position">
+                    </div>
+                    <div class="form-group">
+                        <label for="v_salary">Salario esperado</label>
+                        <input type="text" id="v_salary" placeholder="45">
+                    </div>
+                    <div class="form-group">
+                        <label for="v_hours">Horas semanales</label>
+                        <input type="text" id="v_hours" placeholder="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="v_startDate">Fecha de inicio</label>
+                        <input type="text" id="v_startDate" placeholder="02/11/2026">
+                    </div>
+                </div>
+
+                <div class="answers-editor">
+                    <div class="answers-header">
+                        <span>Respuestas (ES / EN)</span>
+                        <button id="addAnswerButton" class="btn-secondary btn-sm">Agregar respuesta</button>
+                    </div>
+                    <div id="answersList"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button id="saveVariantButton">Guardar variante</button>
+                    <button id="cancelVariantButton" class="btn-secondary">Cancelar</button>
+                </div>
+                <p id="variantStatus" class="status"></p>
+            </div>
+        </section>
     </div>
     <script src="options.js"></script>
 </body>

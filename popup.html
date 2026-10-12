@@ -2,21 +2,30 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pelu Assistant</title>
+    <title>Pelufiller</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <div class="header">
-        <h3 id="popupTitle">Pelu Assistant</h3>
+        <h3 id="popupTitle">Pelufiller</h3>
         <div class="lang-selector">
             <button id="lang-es" class="active">ES</button>
             <button id="lang-en">EN</button>
         </div>
     </div>
-    <button id="fillButton">Fill Basic Info</button>
+
+    <label class="field-label" for="variantSelect" id="variantLabel">Perfil</label>
+    <select id="variantSelect"></select>
+
+    <button id="fillButton">Rellenar formulario</button>
+    <p id="statusLine" class="status"></p>
+
     <hr>
-    <button id="injectSummary" class="text-injector" data-text-key="professionalSummary">Insert Summary</button>
-    <button id="injectExperience" class="text-injector" data-text-key="accentureExperience">Insert Exp. Accenture</button>
+
+    <div id="answersContainer"></div>
+
+    <p class="hint"><a href="#" id="openOptions">Abrir Opciones</a></p>
+
     <script src="popup.js"></script>
 </body>
 </html>

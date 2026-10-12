@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Asistente Pelusa",
-  "version": "0.3",
-  "description": "Un asistente táctico para la postulación de empleos.",
+  "name": "Pelufiller",
+  "version": "0.4",
+  "description": "Rellena formularios de postulación (Greenhouse, Ashby, Lever, Workable) y gestiona perfiles por empresa y puesto.",
   "permissions": [
     "storage",
-    "activeTab", 
+    "activeTab",
     "scripting"
   ],
   "action": {
